@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: soal-splitter
+    env: python
+    buildCommand: "apt-get update && apt-get install -y tesseract-ocr tesseract-ocr-fas && pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    plan: free

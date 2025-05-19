@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>بارگذاری آزمون</title>
+  <style>
+    body { font-family: sans-serif; direction: rtl; padding: 2rem; }
+    input, button { font-size: 1rem; margin: .5rem 0; }
+  </style>
+</head>
+<body>
+  <h1>تفکیک سوالات آزمون</h1>
+  <form action="{{ url_for('process') }}" method="post" enctype="multipart/form-data">
+    <label>فایل آزمون (PDF یا عکس):</label><br>
+    <input type="file" name="exam_file" accept=".pdf,image/*" required><br>
+    <label>بازه شماره سوال (مثلاً 5-15 یا 7):</label><br>
+    <input type="text" name="question_range" placeholder="مثال: 1-20" required><br>
+    <button type="submit">دسته‌بندی و دانلود</button>
+  </form>
+</body>
+</html>
